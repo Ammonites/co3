@@ -2,7 +2,8 @@ package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.DcMotorEx;
+import com.qualcomm.robotcore.hardware.Servo;
+import com.qualcomm.robotcore.util.ElapsedTime;
 
 @TeleOp(name ="TeleOpMode")
 public class teleopmode extends LinearOpMode{
@@ -16,6 +17,8 @@ public class teleopmode extends LinearOpMode{
             init_hardware();
             waitForStart();
             while(opModeIsActive()) {
+                Servo servo;
+                ElapsedTime timer;
                 if(gamepad1.right_trigger > 0.1) {
                     servo.setPosition(0.5);
                     right_trigger = true;
@@ -31,7 +34,7 @@ public class teleopmode extends LinearOpMode{
             }
         }
     }
-    public class TeleOpMode extends TeleOp_Base {
+    public class teleOpMode extends TeleOp_Base {
         int motor_pos = 0;
         @Override
         public void runOpMode() throws InterruptedException {
@@ -44,7 +47,7 @@ public class teleopmode extends LinearOpMode{
                 else if(gamepad1.y && motor_pos > 0) {
                     motor_pos -= 5;
                 }
-                motor.setTargetPosition(motor_pos);
+
             }
         }
     }
@@ -54,7 +57,8 @@ public class teleopmode extends LinearOpMode{
         init_hardware();
         waitForStart();
         //初始狀態設定，例如Servo初始位置
-        while(opModeIsActive()) {public class TeleOpMode extends TeleOp_Base {
+        while(opModeIsActive()) {
+            class TeleOpMode extends TeleOp_Base {
             double drive, turn, strafe;
             double fr, fl, br, bl, scale;
             @Override
@@ -91,7 +95,7 @@ public class teleopmode extends LinearOpMode{
     // 建立函式
     private void init_hardware() {
         //設定物件
-        
+
         idle();
     }
 }

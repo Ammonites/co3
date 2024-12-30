@@ -1,4 +1,5 @@
 package org.firstinspires.ftc.teamcode;
 
-public class TeleOp_Base {
+public abstract class TeleOp_Base {
+    public abstract void runOpMode() throws InterruptedException;
 }
