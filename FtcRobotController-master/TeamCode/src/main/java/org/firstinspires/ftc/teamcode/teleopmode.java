@@ -23,7 +23,7 @@ public class teleopmode extends LinearOpMode{
     // 建立函式
     private void init_hardware() {
         //設定物件
-        
+
         idle();
     }
 }
