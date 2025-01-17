@@ -27,6 +27,17 @@ public abstract class TeleOp_Base extends LinearOpMode {
         BL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
          */
 
+        abstract class TeleOp_Base extends LinearOpMode {
+            public DcMotorEx motor;
+            public void init_hardware() {
+                motor = hardwareMap.get(DcMotorEx.class, "motor");
+                motor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+                motor.setTargetPosition(0);
+                motor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+                motor.setTargetPosition(0);
+                motor.setPower(1);
+            }
+        }
         //servo
 
 

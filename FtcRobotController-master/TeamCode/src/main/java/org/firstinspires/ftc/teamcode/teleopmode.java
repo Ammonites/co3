@@ -36,12 +36,27 @@ public class teleopmode extends TeleOp_Base {
                 BR.setPower(br / scale);
                 BL.setPower(bl / scale);
 
-                if(gamepad1.a){
+                if (gamepad1.a) {
                     servo.setPosition(0.56);
-                }
+                } else {
+                    servo.setPosition(0.0);
 
+
+                }
+                int motor_pos = 0;
+
+                    {
+                        if(gamepad1.b && motor_pos < 1000) {
+                            motor_pos += 5;
+                        }
+                        else if(gamepad1.y && motor_pos > 0) {
+                            motor_pos -= 5;
+                        }
+
+                    }
+                }   
             }
         }
-    }
+
     // 建立函式
 // 外面不可以寫程式喔!!!
