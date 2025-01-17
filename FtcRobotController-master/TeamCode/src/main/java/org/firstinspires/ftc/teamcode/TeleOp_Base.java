@@ -4,9 +4,12 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.Servo;
 
 public abstract class TeleOp_Base extends LinearOpMode {
     public DcMotorEx FR, FL, BR, BL;
+    public Servo servo;
+
     public void init_hardware() {
         FR = hardwareMap.get(DcMotorEx.class, "FR");
         FL = hardwareMap.get(DcMotorEx.class, "FL");
@@ -23,6 +26,10 @@ public abstract class TeleOp_Base extends LinearOpMode {
         BR.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         BL.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
          */
+
+        //servo
+
+
     }
     public double scaling_power(double fr, double fl, double br, double bl) {
         double max = Math.max(Math.max(Math.abs(fr), Math.abs(fl)), Math.max(Math.abs(br), Math.abs(bl)));
